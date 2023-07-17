@@ -1,0 +1,39 @@
+Next js gives advantage of srever side rendering
+and server side rendering benefits seo indexing and other things
+
+files inside the app are automatically server side rendered if you want to turn on the client side rendering, then you have to use 
+"use client" at the top of your page.js
+
+
+whenever you are goign to use states or hooks in next js you have to declare teh componetn as client side reddered because staate management is client side reddered
+
+as in react dynamic routing is done by nested <Router><Rotue/></Router>
+but in NExt js jsut create nested folders ad this is done
+
+the loading .js file acts as default loader for compelt route/folder
+the error.js file act as default error boundary componet for complete route/folder
+
+the error boundaries msut be client rendered compoents
+
+
+three ways to fetch data 
+SSR (server side rendering ) it does not cached the data
+SSG(static side generation) it cached tha data
+ISG Incremental static generation
+the third one is the combinaion of all  we use {next: {revalidate: 10}} and this means that the data will be automatically refreshed after this interval of tiem 
+
+every route in next js is server less|
+a lamda function is created for every route and run only when gets call
+
+in simple express nodejs we jsut say for the models
+const User = model("User", userSchema);
+but for the next js we have to do this
+const User = mongoose.models.User || model("User", userSchema);
+this is because in next js this route will be called multiple times every time when this route will be loaded by network so we are sayiing to call the model only when it is not exits
+
+
+export const GET = async (req,{params}) => 
+this is how we can get the params from the url in next js which has a folder name like [id] 
+
+const {prompt,tag} = await res.json();
+this is how we get teh valeu of body params in next js whic we pass as a payload
